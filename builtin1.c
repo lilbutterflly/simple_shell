@@ -65,7 +65,7 @@ int print_alias(list_t *node)
 		_putchar(*a);
 		_putchar('\'');
 		_puts(p + 1);
-		_puts('"\n");
+		_puts("'\n");
 		return (0);
 	}
 	return (1);
@@ -94,11 +94,11 @@ int _myalias(info_t *info)
 	}
 	for (i = 1; info->argv[i]; i++)
 	{
-		p = _strchr(info->argv[i], ' = ');
+		p = _strchr(info->argv[i], '=');
 		if (p)
 			set_alias(info, info->argv[i]);
 		else
-			print_alias(node_starts_with(info->alias, info->argv[i], ' = '));
+			print_alias(node_starts_with(info->alias, info->argv[i], '='));
 	}
 	return (0);
 }
