@@ -115,7 +115,7 @@ void find_cmd(info_t *info)
  * @info: the parameter & return info struct
  * Return: void
  */
-void frk_cmd(info_t *info)
+void fork_cmd(info_t *info)
 {
 	pid_t child_pid;
 
