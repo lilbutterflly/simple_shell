@@ -37,7 +37,7 @@ int is_chain(info_t *info, char *buf, size_t *p)
  * @info: the parameter struct
  * @buf: the char buffer
  * @p: address of current position
- * @i: starting position 
+ * @i: starting position
  * @len: length of buf
  * Return: Void
  */
@@ -59,8 +59,8 @@ void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 		{
 			buf[i] = 0;
 			j = len;
-		}	}
-
+		}
+	}
 	*p = j;
 }
 /**
@@ -99,9 +99,11 @@ int replace_vars(info_t *info)
 {
 	int i = 0;
 	list_t *node;
+
 	for (i = 0; info->argv[i]; i++)
 	{
-		if (info->argv[i][0] != '$' || !info->argv[i][1])
+		if (info->argv[i][0] != '$' ||
+				!info->argv[i][1])
 			continue;
 
 		if (!_strcmp(info->argv[i], "$?"))
@@ -116,7 +118,8 @@ int replace_vars(info_t *info)
 					_strdup(convert_number(getpid(), 10, 0)));
 			continue;
 		}
-		node = node_starts_with(info->env, &info->argv[i][1], '=');
+		node = node_starts_with(info->env,
+				&info->argv[i][1], '=');
 		if (node)
 		{
 			replace_string(&(info->argv[i]),
