@@ -14,6 +14,7 @@
 
 /* for read/write buffers */
 #define READ_BUF_SIZE 1024
+#define WRITE_BUF_SIZE 1024
 #define BUF_FLUSH -1
 
 /* for command chaining */
@@ -57,7 +58,7 @@ typedef struct liststr
  * @argc: the argument count
  * @line_count: the error count
  * @err_num: the error code for exit()s
- * @dlinecoynt_flag: if on count this line of input
+ * @linecount_flag: if on count this line of input
  * @fname: the program filename
  * @env: linked list local copy of environ
  * @environ: custom modified copy of environ from LL env
