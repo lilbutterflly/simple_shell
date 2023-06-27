@@ -110,6 +110,8 @@ void find_cmd(info_t *info)
 			info->status = 127;
 			print_error(info, "not found\n");
 		}
+	}
+}
 /**
  * fork_cmd - forks a an exec thread to run cmd
  * @info: the parameter & return info struct
